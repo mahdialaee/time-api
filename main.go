@@ -16,8 +16,8 @@ func getTime(c *gin.Context) {
 
 	var tnow = uTime{}
 
-	tnow.UnixMilli = time.Now().UnixMilli()
 	tnow.HumanReadable = time.Now().Format(time.ANSIC)
+	tnow.UnixMilli = time.Now().UnixMilli()
 
 	c.IndentedJSON(http.StatusOK, tnow)
 
