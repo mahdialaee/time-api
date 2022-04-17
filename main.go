@@ -33,7 +33,7 @@ func handleRequests() {
 		fmt.Printf("\nRunning http server on localhost:8000\n\nIf you need to run on a different ip address or port press crtl+c \nrun time-api <ip address>:<port> \n ")
 		log.Fatal(http.ListenAndServe("localhost:8000", nil))
 	} else {
-		fmt.Println("Running http server on  ", CmdArguments[1])
+		fmt.Println("Running http server on", CmdArguments[1])
 		log.Fatal(http.ListenAndServe(CmdArguments[1], nil))
 	}
 }
