@@ -27,7 +27,7 @@ func uTime(w http.ResponseWriter, r *http.Request) {
 }
 
 func handleRequests() {
-	http.HandleFunc("/test", uTime)
+	http.HandleFunc("/api/time", uTime)
 
 	if len(os.Args) <= 1 {
 		fmt.Printf("\nRunning http server on localhost:8000\n\nIf you need to run on a different ip address or port press crtl+c \nrun time-api <ip address>:<port> \n ")
