@@ -16,6 +16,7 @@ var UnixTime struct {
 var CmdArguments = os.Args
 
 func uTime(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
 	utime := UnixTime
 
 	utime.HumanReadable = time.Now().Format(time.ANSIC)
@@ -25,7 +26,8 @@ func uTime(w http.ResponseWriter, r *http.Request) {
 }
 
 func handleRequests() {
-	http.HandleFunc("/", uTime)
+	http.HandleFunc("/test", uTime)
+
 	if len(os.Args) <= 1 {
 		fmt.Printf("\nRunning http server on localhost:8000\n\nIf you need to run on a different ip address or port press crtl+c \nrun time-api <ip address>:<port> \n ")
 		log.Fatal(http.ListenAndServe("localhost:8000", nil))
