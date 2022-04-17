@@ -17,6 +17,7 @@ var CmdArguments = os.Args
 
 func uTime(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
+
 	utime := UnixTime
 
 	utime.HumanReadable = time.Now().Format(time.ANSIC)
